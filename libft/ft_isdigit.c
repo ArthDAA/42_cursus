@@ -6,14 +6,14 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:41:37 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/03 14:42:32 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:58:11 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int i)
+int	ft_isdigit(int i)
 {
-	if (i > '0' || i < '9')
-		return (0);
+	if (i >= '0' && i <= '9')
+		return (2048);
 	else
-		return (1);
+		return (0);
 }

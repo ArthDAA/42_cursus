@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:18:00 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/05 11:28:56 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:57:52 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 #include <stdio.h>
 
-int	ft_isascii(int i)
+int	ft_isdigit(int i)
 {
-	if (i >= 0 && i < 128)
-		return (1);
+	if (i >= '0' && i <= '9')
+		return (2048);
 	else
 		return (0);
 }
@@ -27,7 +27,10 @@ int main()
     i = -1;
     while (i < 129)
     {
-        printf("%c : %d - %d\n\n", i, isascii(i), ft_isascii(i));
+        if (isdigit(i) != ft_isdigit(i))
+            printf("\n%c : %d - %d\n\n", i, isdigit(i), ft_isdigit(i));
+        else
+            printf("---\n");
         i++;
     }
 }

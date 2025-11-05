@@ -6,14 +6,14 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:37:46 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/03 14:39:41 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:55:30 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int i)
+int	ft_isalpha(int i)
 {
-	if (i > 'A' || i < 'z' || (i <= 'Z' && i >= 'a'))
-		return (0);
+	if ((i >= 'A' && i <= 'Z') || (i >= 'a' && i <= 'z'))
+		return (1024);
 	else
-		return (1);
+		return (0);
 }
