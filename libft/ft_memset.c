@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 11:18:00 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/06 16:47:21 by arde-ass         ###   ########.fr       */
+/*   Created: 2025/11/06 13:21:17 by arde-ass          #+#    #+#             */
+/*   Updated: 2025/11/06 16:16:57 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isprint(int i)
+void    *ft_memset(void *s, int c, size_t n)
 {
-	if (i >= ' ' && i <= '~')
-		return (16384);
-	else
-		return (0);
-}
-
-int main()
-{
-    int i;
-    i = -1;
-    while (i < 129)
+    size_t i;
+    unsigned char *ptr;
+    
+    ptr = (unsigned char *)s;
+    i = 0;
+    while (i < n)
     {
-        if (isprint(i) != ft_isprint(i))
-            printf("\n%c : %d - %d\n\n", i, isprint(i), ft_isprint(i));
-        else
-            printf("---\n");
+        ptr[i] = (unsigned char)c;
         i++;
     }
+    return (s);
 }

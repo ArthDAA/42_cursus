@@ -1,36 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 11:18:00 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/06 16:47:21 by arde-ass         ###   ########.fr       */
+/*   Created: 2025/11/06 15:02:43 by arde-ass          #+#    #+#             */
+/*   Updated: 2025/11/06 15:02:49 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
-
-int	ft_isprint(int i)
-{
-	if (i >= ' ' && i <= '~')
-		return (16384);
-	else
-		return (0);
-}
-
-int main()
-{
-    int i;
-    i = -1;
-    while (i < 129)
-    {
-        if (isprint(i) != ft_isprint(i))
-            printf("\n%c : %d - %d\n\n", i, isprint(i), ft_isprint(i));
-        else
-            printf("---\n");
-        i++;
-    }
-}
+typedef typeof(sizeof(0)) size_t;
