@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 16:54:27 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/14 17:01:10 by arde-ass         ###   ########.fr       */
+/*   Created: 2025/11/14 17:22:08 by arde-ass          #+#    #+#             */
+/*   Updated: 2025/11/14 17:22:09 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	size_t				i;
-	const unsigned char	*p1;
-	const unsigned char	*p2;
+	size_t	len;
+	size_t	i;
+	char	*copy;
 
-	p1 = (const unsigned char *)s1;
-	p2 = (const unsigned char *)s2;
+	len = 0;
+	while (s1[len] != '\0')
+		len++;
+	copy = (char *)malloc(len + 1);
+	if (copy == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		if (p1[i] != p2[i])
-		{
-			return (p1[i] - p2[i]);
-		}
+		copy[i] = s1[i];
 		i++;
 	}
-	return (0);
+	copy[i] = '\0';
+	return (copy);
 }

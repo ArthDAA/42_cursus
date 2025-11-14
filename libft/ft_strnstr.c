@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 16:54:27 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/14 17:01:10 by arde-ass         ###   ########.fr       */
+/*   Created: 2025/11/14 17:19:08 by arde-ass          #+#    #+#             */
+/*   Updated: 2025/11/14 17:19:09 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t				i;
-	const unsigned char	*p1;
-	const unsigned char	*p2;
+	size_t	i;
+	size_t	j;
 
-	p1 = (const unsigned char *)s1;
-	p2 = (const unsigned char *)s2;
+	if (needle[0] == '\0')
+		return ((char *)haystack);
 	i = 0;
-	while (i < n)
+	while (haystack[i] != '\0' && i < len)
 	{
-		if (p1[i] != p2[i])
+		j = 0;
+		while (haystack[i + j] != '\0' && i + j < len
+			&& needle[j] == haystack[i + j])
 		{
-			return (p1[i] - p2[i]);
+			j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
