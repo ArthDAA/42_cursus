@@ -6,14 +6,17 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:18:00 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/05 11:57:15 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/14 03:56:51 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int i)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	if (i >= 0 && i < 128)
-		return (1);
-	else
-		return (0);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	{
+		return (FT_ALPHA);
+	}
+	return (0);
 }

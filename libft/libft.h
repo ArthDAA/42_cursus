@@ -5,18 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD
-/*   Created: 2025/11/06 15:02:43 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/06 15:02:49 by arde-ass         ###   ########.fr       */
+/*   Created: 2025/11/14 03:57:15 by arde-ass          #+#    #+#             */
+/*   Updated: 2025/11/14 03:57:25 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef typeof(sizeof(0)) size_t;
-=======
-/*   Created: 2025/11/14 03:25:24 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/14 03:53:36 by arde-ass         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -75,4 +69,3 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 #endif
->>>>>>> 5d5ab65 (A la norme)

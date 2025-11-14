@@ -6,14 +6,17 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 13:01:29 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/05 13:01:34 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/14 03:56:44 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int i)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-	if (i >= ' ' && i <= '~')
-		return (16384);
-	else
-		return (0);
+	if (c >= 32 && c <= 126)
+	{
+		return (FT_PRINT);
+	}
+	return (0);
 }

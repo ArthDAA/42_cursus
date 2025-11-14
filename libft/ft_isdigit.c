@@ -6,14 +6,17 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:41:37 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/05 11:58:11 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/14 03:56:48 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int i)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	if (i >= '0' && i <= '9')
-		return (2048);
-	else
-		return (0);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	{
+		return (FT_ALPHA);
+	}
+	return (0);
 }

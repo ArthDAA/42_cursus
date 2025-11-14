@@ -6,16 +6,20 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 13:02:49 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/05 13:04:25 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/14 03:56:40 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
-{
-    int i;
+#include "libft.h"
 
-    i = 0;
-    while (str[i] != '\0')
-        i++;
-    return (i);
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
