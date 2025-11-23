@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 04:31:57 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/23 17:08:24 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:38:04 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
+	if (d == s)
+		return (dst);
 	if (d > s)
 		ft_move_back(d, s, len);
 	else

@@ -6,11 +6,9 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:39:26 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/23 17:09:24 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/23 18:16:32 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -28,4 +26,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, total);
 	return (ptr);
 }
-

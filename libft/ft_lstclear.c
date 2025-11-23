@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:36:29 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/23 17:02:33 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:38:20 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
+	*lst = NULL;
 }
