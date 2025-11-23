@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 17:39:26 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/23 17:09:24 by arde-ass         ###   ########.fr       */
+/*   Created: 2025/11/16 01:26:35 by arde-ass          #+#    #+#             */
+/*   Updated: 2025/11/16 01:26:38 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	void	*ptr;
-	size_t	total;
+	size_t	len;
+	size_t	i;
+	char	*copy;
 
-	if (size != 0 && nmemb > (size_t)-1 / size)
+	len = 0;
+	while (s1[len] != '\0')
+		len++;
+	copy = (char *)malloc(len + 1);
+	if (copy == NULL)
 		return (NULL);
-	total = nmemb * size;
-	ptr = malloc(total);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, total);
-	return (ptr);
+	i = 0;
+	while (i < len)
+	{
+		copy[i] = s1[i];
+		i++;
+	}
+	copy[i] = '\0';
+	return (copy);
 }
-

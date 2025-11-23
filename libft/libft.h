@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 03:57:15 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/14 14:27:27 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/20 21:45:24 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 # define FT_ALPHA  1024
 # define FT_DIGIT  2048
