@@ -6,64 +6,80 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 21:30:13 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/24 14:41:44 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:01:50 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	skip_sep(const char *s, char c, size_t i)
+int	count_words(char *str, char c)
 {
-	while (s[i] != '\0' && s[i] == c)
-		i++;
-	return (i);
+	int	count;
+	int	in_word;
+
+	count = 0;
+	in_word = 0;
+	while (*str)
+	{
+		if (*str != c && !in_word)
+		{
+			count++;
+			in_word = 1;
+		}
+		else if (*str == c)
+			in_word = 0;
+		str++;
+	}
+	return (count);
 }
 
-static size_t	word_len(const char *s, char c, size_t i)
+char	*get_word(char *str, char c)
 {
-	size_t	len;
+	int		len;
+	int		i;
+	char	*word;
 
 	len = 0;
-	while (s[i + len] != '\0' && s[i + len] != c)
+	i = 0;
+	while (str[len] && str[len] != c)
 		len++;
-	return (len);
-}
-
-static void	free_tab(char **tab, size_t n)
-{
-	while (n > 0)
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
+	while (i < len)
 	{
-		n--;
-		free(tab[n]);
+		word[i] = str[i];
+		i++;
 	}
-	free(tab);
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	char	**tab;
-	size_t	i;
-	size_t	j;
-	size_t	len;
+	char	**res;
+	int		i;
 
-	tab = (char **)malloc((ft_strlen(s) + 1) * sizeof(char *));
-	if (tab == NULL)
-		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	if (!s)
+		return (NULL);
+	res = malloc(sizeof(char *) * (count_words((char *)s, c) + 1));
+	if (!res)
+		return (NULL);
+	while (*s)
 	{
-		i = skip_sep(s, c, i);
-		if (s[i] != '\0')
+		if (*s != c)
 		{
-			len = word_len(s, c, i);
-			tab[j] = ft_substr(s, i, len);
-			if (tab[j] == NULL)
-				return (free_tab(tab, j), NULL);
-			j++;
-			i += len;
+			res[i] = get_word((char *)s, c);
+			if (!res[i])
+				return (NULL);
+			i++;
+			while (*s && *s != c)
+				s++;
 		}
+		else
+			s++;
 	}
-	tab[j] = NULL;
-	return (tab);
+	res[i] = NULL;
+	return (res);
 }
