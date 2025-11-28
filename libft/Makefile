@@ -6,7 +6,7 @@
 #    By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/23 17:19:33 by arde-ass          #+#    #+#              #
-#    Updated: 2025/11/24 14:42:23 by arde-ass         ###   ########.fr        #
+#    Updated: 2025/11/28 13:59:57 by arde-ass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+bonus: $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ_BONUS)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
