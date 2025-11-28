@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 01:27:40 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/24 14:42:15 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/28 10:48:55 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*ft_empty_str(void)
 	char	*sub;
 
 	sub = (char *)malloc(1);
-	if (sub == NULL)
+	if (!sub)
 		return (NULL);
 	sub[0] = '\0';
 	return (sub);
@@ -39,13 +39,15 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*sub;
 
+	if (!s)
+		return (NULL);
 	slen = ft_slen(s);
 	if (start >= slen)
 		return (ft_empty_str());
 	if (len > slen - start)
 		len = slen - start;
 	sub = (char *)malloc(len + 1);
-	if (sub == NULL)
+	if (!sub)
 		return (NULL);
 	i = 0;
 	while (i < len)

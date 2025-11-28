@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 21:37:05 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/11/24 14:42:00 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/11/28 10:48:55 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	size_t	len;
 	char	*res;
 
+	if (!s || !f)
+		return (NULL);
 	len = 0;
 	while (s[len] != '\0')
 		len++;
 	res = (char *)malloc(len + 1);
-	if (res == NULL)
+	if (!res)
 		return (NULL);
 	i = 0;
 	while (i < len)
