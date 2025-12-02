@@ -5,8 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
+<<<<<<< HEAD
 #    Created: 2025/11/28 14:21:45 by arde-ass          #+#    #+#              #
 #    Updated: 2025/11/28 14:21:46 by arde-ass         ###   ########.fr        #
+=======
+#    Created: 2025/11/23 17:19:33 by arde-ass          #+#    #+#              #
+#    Updated: 2025/11/28 13:59:57 by arde-ass         ###   ########.fr        #
+>>>>>>> 4131877faad74b802efee60913cd2a017f524a69
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +39,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+<<<<<<< HEAD
 bonus: $(NAME) $(OBJ_BONUS)
+=======
+bonus: $(OBJ_BONUS)
+>>>>>>> 4131877faad74b802efee60913cd2a017f524a69
 	ar rcs $(NAME) $(OBJ_BONUS)
 
 clean:
