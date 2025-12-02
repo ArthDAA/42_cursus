@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/23 17:19:33 by arde-ass          #+#    #+#              #
-#    Updated: 2025/11/24 14:42:23 by arde-ass         ###   ########.fr        #
+#    Created: 2025/11/28 14:21:45 by arde-ass          #+#    #+#              #
+#    Updated: 2025/11/28 14:21:46 by arde-ass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+bonus: $(NAME) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ_BONUS)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
@@ -44,3 +44,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
