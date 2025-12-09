@@ -6,15 +6,16 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 10:14:55 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 06:45:52 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:29:48 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (str[i] != '\0')
 	{
