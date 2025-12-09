@@ -6,15 +6,15 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 02:51:51 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 06:45:48 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:25:18 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int ft_putnbr(int nbr)
+int	ft_putnbr(int nbr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nbr == -2147483648)
