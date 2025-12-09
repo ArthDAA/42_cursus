@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftprintf.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 03:57:15 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 08:39:47 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:51:01 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTPRINTF_H
-# define FTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -28,5 +28,6 @@ int		ft_putstr(char *str);
 int		ft_putuns(unsigned int nbr);
 int		ft_putnbr(int nbr);
 char	*ft_strdup(const char *s1);
+int		ft_puthexa(unsigned int nbr, char *base);
 
 #endif

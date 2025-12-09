@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 10:14:55 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 09:40:17 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:55:53 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
 	while (str[i] != '\0')
 	{
-		ft_putchar(str[i]);
+		write (1, &str[i], 1);
 		i++;
 	}
-	return (i);
+	return (ft_strlen(str));
 }
