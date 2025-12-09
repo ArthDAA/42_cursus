@@ -6,11 +6,11 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 01:26:35 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 08:27:15 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 09:40:03 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "../ft_printf.h"
 
 char	*ft_strdup(const char *s1)
 {

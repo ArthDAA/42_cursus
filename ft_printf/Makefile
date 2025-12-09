@@ -6,7 +6,7 @@
 #    By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/09 06:40:50 by arde-ass          #+#    #+#              #
-#    Updated: 2025/12/09 06:40:59 by arde-ass         ###   ########.fr        #
+#    Updated: 2025/12/09 09:38:41 by arde-ass         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR = libftprintf
+SRC_DIR = ./libftprintf
 SRC = $(SRC_DIR)/convert_base.c \
       $(SRC_DIR)/ft_putchar.c \
       $(SRC_DIR)/ft_putnbr.c \

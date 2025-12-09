@@ -6,11 +6,11 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 13:11:23 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 08:21:46 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 09:39:51 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf/ftprintf.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 
 static int	dispatch(char c, va_list args)

@@ -6,11 +6,11 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 05:15:06 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 08:17:54 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 09:40:36 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "../ft_printf.h"
 
 int	length(unsigned long long value, int base)
 {
