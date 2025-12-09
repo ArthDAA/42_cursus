@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 13:11:23 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 08:11:49 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:21:46 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static int	dispatch(char c, va_list args)
 	if (c == 'u')
 		return (ft_putuns(va_arg(args, unsigned int)));
 	if (c == 'x')
-		return (ft_putstr(convert_base(va_arg(args, unsigned int), hex)));
+		return (ft_putstr(convert_base(va_arg(args, unsigned int), LOW_HEX)));
 	if (c == 'X')
-		return (ft_putstr(convert_base(va_arg(args, unsigned int), HEX)));
+		return (ft_putstr(convert_base(va_arg(args, unsigned int), UP_HEX)));
 	if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
