@@ -6,15 +6,15 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 05:15:06 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 06:45:24 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:17:54 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int length(unsigned long long value, int base)
+int	length(unsigned long long value, int base)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (value == 0)
@@ -27,22 +27,19 @@ int length(unsigned long long value, int base)
 	return (len);
 }
 
-char    *convert_base(unsigned long long value, char *table)
+char	*convert_base(unsigned long long value, char *table)
 {
-	int     i;
-	char    *out;
-	int     base;
+	int		i;
+	char	*out;
+	int		base;
 
 	base = ft_strlen(table);
-
 	if (value == 0)
 		return (ft_strdup("0"));
-
 	i = length(value, base);
 	out = malloc(sizeof(char) * (i + 1));
 	if (!out)
 		return (NULL);
-
 	out[i--] = '\0';
 	while (value > 0)
 	{
@@ -52,4 +49,3 @@ char    *convert_base(unsigned long long value, char *table)
 	}
 	return (out);
 }
-
