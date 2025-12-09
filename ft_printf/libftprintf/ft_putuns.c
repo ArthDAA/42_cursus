@@ -6,15 +6,15 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 10:36:58 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 06:45:57 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:28:58 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int ft_putuns (unsigned int nbr)
+int	ft_putuns(unsigned int nbr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nbr >= 10)
@@ -22,5 +22,3 @@ int ft_putuns (unsigned int nbr)
 	count += ft_putchar((nbr % 10) + '0');
 	return (count);
 }
-
-
