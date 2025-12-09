@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 03:57:15 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/09 06:12:55 by arde-ass         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:23:23 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define hex		"0123456789abcdef"
-# define HEX 		"0123456789ABCDEF"
+# define LOW_HEX		"0123456789abcdef"
+# define UP_HEX 		"0123456789ABCDEF"
 
 size_t	ft_strlen(const char *s);
-char    *convert_base(unsigned long long value, char *table);
+char	convert_base(unsigned long long value, char *table);
 int		ft_printf(const char *format, ...);
-int		ft_putchar (char c);
+int		ft_putchar(char c);
 int		ft_putmem(void *ptr);
 int		ft_putstr(char *str);
 int		ft_putuns(unsigned int nbr);
