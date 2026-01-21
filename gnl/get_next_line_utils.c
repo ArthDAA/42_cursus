@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 02:19:30 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/01/21 10:35:10 by arde-ass         ###   ########.fr       */
+/*   Updated: 2026/01/21 10:39:26 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*gnl_strjoin(char *s1, char *s2)
 	res = malloc(gnl_strlen(s1) + gnl_strlen(s2) + 1);
 	if (!res)
 	{
-		free(res);
+		free(s1);
 		return (NULL);
 	}
 	i = -1;
