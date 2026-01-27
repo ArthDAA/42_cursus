@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 02:19:30 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/01/24 15:07:02 by arde-ass         ###   ########.fr       */
+/*   Updated: 2026/01/21 10:39:26 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ char	*gnl_strdup(const char *s)
 	size_t	i;
 	char	*dup;
 
-	if (!s)
-		return (NULL);
 	dup = malloc(gnl_strlen(s) + 1);
 	if (!dup)
 		return (NULL);

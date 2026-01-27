@@ -6,7 +6,7 @@
 /*   By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 02:19:32 by arde-ass          #+#    #+#             */
-/*   Updated: 2025/12/13 17:35:58 by arde-ass         ###   ########.fr       */
+/*   Updated: 2026/01/27 15:23:14 by arde-ass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ static char	*extract_line(char **stash)
 	char	*rest;
 
 	if (!*stash || **stash == 0)
+	{
+		if (*stash)
+			free(*stash);
+		*stash = NULL;
 		return (NULL);
+	}
 	nl = find_nl(*stash);
 	if (nl >= 0)
 	{
