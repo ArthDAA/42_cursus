@@ -46,4 +46,4 @@ This approach avoids reading the whole file at once and ensures correct behavior
 
 ### AI usage
 
-AI was used only to help write this README. No code was generated using AI.
+AI was used only to help write this README.
