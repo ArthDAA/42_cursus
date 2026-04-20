@@ -3,52 +3,54 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arde-ass <arde-ass@student.42.fr>          +#+  +:+       +#+         #
+#    By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/09 06:40:50 by arde-ass          #+#    #+#              #
-#    Updated: 2026/03/09 20:43:41 by arde-ass         ###   ########.fr        #
+#    Created: 2026/04/11 09:21:05 by ccolnat           #+#    #+#              #
+#    Updated: 2026/04/18 14:14:34 by ccolnat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+NAME    =   push_swap
 
-SRCS = push_swap.c
-OBJS = $(SRCS:.c=.o)
+CFLAGS  =   -Wall -Wextra -Werror
 
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
+CC      =   gcc
 
-FT_PRINTF_DIR = ./ft_printf
-FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
+S       =   src/main.c \
+            src/init.c \
+            src/input_check.c \
+            src/input_clean.c \
+            src/linked_list.c \
+            src/linked_list_utils.c \
+            src/push_swap.c \
+            src/push.c \
+            src/rotate.c \
+            src/rev_rotate.c \
+            src/swap.c \
+            src/simple_sort.c \
+            src/medium_sort.c \
+            src/complex_sort.c \
+            src/sorts_utils.c \
+            src/split.c \
+            src/utils.c \
+            src/ft_printf.c \
+            src/ft_printf_utils.c \
+            src/count.c \
+            src/print_moves.c \
 
-INCLUDES = -I. -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR)
+OBJS	=	$(S:.c=.o)
 
-all: $(NAME)
+all:	$(NAME)
 
-$(NAME): $(LIBFT) $(FT_PRINTF) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -L$(FT_PRINTF_DIR) -lftprintf -o $(NAME)
-
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
-
-$(FT_PRINTF):
-	$(MAKE) -C $(FT_PRINTF_DIR)
+$(NAME):	$(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) clean
-	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
-fclean: clean
+fclean:        clean
 	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
-	$(MAKE) -C $(FT_PRINTF_DIR) fclean
 
-re: fclean all
+re:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY:	all clean fclean re
