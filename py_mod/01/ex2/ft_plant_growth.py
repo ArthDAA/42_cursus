@@ -1,10 +1,19 @@
 class Plant:
+    def __init__(self) -> None:
+        self.name: str = ""
+        self.height: float = 0.0
+        self.days: int = 0
+        self.def_height: float = 0.0
+
     def show(self) -> None:
         print(f"{self.name}: {self.height:.1f}cm, {self.days} days old")
+
     def grow(self) -> None:
         self.height += 0.8
+
     def age(self) -> None:
         self.days += 1
+
 
 if __name__ == "__main__":
     rose = Plant()
@@ -15,7 +24,7 @@ if __name__ == "__main__":
     days = 1
     print("=== Garden Plant Growth ===")
     rose.show()
-    while(days <= 7):
+    while (days <= 7):
         print(f"=== Day {days} ===")
         rose.grow()
         rose.age()

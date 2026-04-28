@@ -3,12 +3,16 @@ class Plant:
         self.name = name
         self.height = height
         self.days = days
+
     def show(self) -> None:
         print(f"{self.name}: {self.height:.1f}cm, {self.days} days old")
+
     def grow(self) -> None:
         self.height += 0.8
+
     def age(self) -> None:
         self.days += 1
+
 
 if __name__ == "__main__":
     rose = Plant("Rose", 25, 30)
@@ -17,13 +21,13 @@ if __name__ == "__main__":
     sunflower = Plant("Sunflower", 80, 45)
     fern = Plant("Fern", 15, 120)
     print("=== Plant Factory Output ===")
-    print(f"Created: ", end = "")
+    print("Created: ", end="")
     rose.show()
-    print(f"Created: ", end = "")
+    print("Created: ", end="")
     oak.show()
-    print(f"Created: ", end = "")
+    print("Created: ", end="")
     cactus.show()
-    print(f"Created: ", end = "")
+    print("Created: ", end="")
     sunflower.show()
-    print(f"Created: ", end = "")
+    print("Created: ", end="")
     fern.show()
