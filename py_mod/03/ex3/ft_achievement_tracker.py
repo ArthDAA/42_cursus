@@ -1,44 +1,54 @@
 import random
 
-ACHIEVEMENTS = [
-    'Crafting Genius', 'Strategist', 'World Savior', 'Speed Runner',
-    'Survivor', 'Master Explorer', 'Treasure Hunter', 'Unstoppable',
-    'First Steps', 'Collector Supreme',
-    'Untouchable', 'Sharp Mind', 'Boss Slayer'
+
+ACHIEVEMENTS: list[str] = [
+    "Crafting Genius", "Strategist", "World Savior", "Speed Runner",
+    "Survivor", "Master Explorer", "Treasure Hunter", "Unstoppable",
+    "First Steps", "Collector Supreme",
+    "Untouchable", "Sharp Mind", "Boss Slayer", "Hidden Path Finder",
 ]
 
 
-def gen_player_achievements():
-    success = random.randint(1, len(ACHIEVEMENTS))
-    return set(random.sample(ACHIEVEMENTS, success))
+def gen_player_achievements() -> set[str]:
+    count: int = random.randint(len(ACHIEVEMENTS) // 2, len(ACHIEVEMENTS))
+    picked: list[str] = random.sample(ACHIEVEMENTS, count)
+    return (set(picked))
 
 
-if __name__ == "__main__":
-    print("=== Achievement Tracker System ===\n")
-    Players = {
-        'Epic': gen_player_achievements(),
-        'Ice': gen_player_achievements(),
-        'Bluekill33': gen_player_achievements(),
-        'Boruto459': gen_player_achievements()
+def main() -> None:
+    print("=== Achievement Tracker System ===")
+
+    players: dict[str, set[str]] = {
+        "Alice": gen_player_achievements(),
+        "Bob": gen_player_achievements(),
+        "Charlie": gen_player_achievements(),
+        "Dylan": gen_player_achievements(),
     }
-    player_names = list(Players.keys())
-    for i in range(len(player_names)):
-        name = player_names[i]
-        print(f"Player {name}: {Players[name]}")
-    print(f"\nAll distinct achievements: {set(ACHIEVEMENTS)}\n")
 
-    common_achievements = set.intersection(*Players.values())
-    print(f"Common achievements: {common_achievements}\n")
+    for name, owned in players.items():
+        print(f"Player {name}: {owned}")
 
-    for name in player_names:
-        diff_sets = [Players[diff] for diff in player_names if diff != name]
-        diff = Players[name].difference(*diff_sets)
-        print(f"Only {name} has: {diff}")
+    all_distinct: set[str] = set()
+    for owned in players.values():
+        all_distinct = all_distinct.union(owned)
+    print(f"All distinct achievements: {all_distinct}")
 
-    print("\n")
-    for name in player_names:
-        all_achievements = set(ACHIEVEMENTS)
-        diff_sets = [Players[diff] for diff in player_names if diff != name]
-        diff = Players[name].difference(*diff_sets)
-        missing = all_achievements - Players[name]
+    common: set[str] = set(ACHIEVEMENTS)
+    for owned in players.values():
+        common = common.intersection(owned)
+    print(f"Common achievements: {common}")
+
+    for name, owned in players.items():
+        others: set[str] = set()
+        for other_name, other_owned in players.items():
+            if (other_name != name):
+                others = others.union(other_owned)
+        print(f"Only {name} has: {owned.difference(others)}")
+
+    for name, owned in players.items():
+        missing: set[str] = all_distinct.difference(owned)
         print(f"{name} is missing: {missing}")
+
+
+if (__name__ == "__main__"):
+    main()
