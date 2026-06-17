@@ -10,7 +10,7 @@ ACHIEVEMENTS: list[str] = [
 
 
 def gen_player_achievements() -> set[str]:
-    count: int = random.randint(len(ACHIEVEMENTS) // 2, len(ACHIEVEMENTS))
+    count: int = random.randint(1, len(ACHIEVEMENTS))
     picked: list[str] = random.sample(ACHIEVEMENTS, count)
     return (set(picked))
 
