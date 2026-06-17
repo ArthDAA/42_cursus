@@ -1,6 +1,7 @@
 import sys
 import typing
 
+
 try:
     accfold: str = sys.argv[1]
     print(
