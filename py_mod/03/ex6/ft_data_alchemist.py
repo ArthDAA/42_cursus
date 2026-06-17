@@ -46,7 +46,7 @@ def main() -> None:
         f"{is_capitalized}\n"
     )
 
-    stats:  dict(str, int) = {}
+    stats:  dict[str, int] = {}
     for name in been_capitalized:
         stats[name] = random.randint(0, 1000)
 
@@ -55,7 +55,7 @@ def main() -> None:
         f"{stats}"
     )
 
-    average: int = sum(stats.values()) / len(stats)
+    average: float = sum(stats.values()) / len(stats)
     print(
         "Score average is "
         f"{average:.2f}"
