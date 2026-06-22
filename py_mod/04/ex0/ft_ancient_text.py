@@ -1,28 +1,27 @@
+#!/usr/bin/env python3
 import sys
-import typing
+from typing import IO
 
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print(f"Usage: {sys.argv[0]} <file>")
+        sys.exit(1)
 
-try:
-    accfold: str = sys.argv[1]
-    print(
-        "=== Cyber Archives Recovery ===\n"
-        f"Accessing file '{accfold}'"
-    )
+    filename: str = sys.argv[1]
+    print("=== Cyber Archives Recovery ===")
+    print(f"Accessing file '{filename}'")
+
+    f: IO[str]
     try:
-        f = open(accfold, "r")
-        contenu = f.read()
-        print(
-            "---\n\n"
-            f"{contenu}\n\n"
-            "---\n"
-            f"File '{accfold}' closed."
-        )
-        f.close()
-    except Exception as e:
-        print(
-            f"Error opening file '{accfold}': {e}"
-        )
+        f = open(filename)
+    except OSError as e:
+        print(f"Error opening file '{filename}': {e}")
+        sys.exit(1)
 
+    content: str = f.read()
+    f.close()
 
-except IndexError as e:
-    print("Usage: ft_ancient_text.py <file>")
+    print("---\n")
+    print(content)
+    print("---")
+    print(f"File '{filename}' closed.")
