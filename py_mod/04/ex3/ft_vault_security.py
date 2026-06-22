@@ -41,6 +41,8 @@ if __name__ == "__main__":
     print()
 
     if success:
-        print("Using 'secure_archive' to write previous content to a new file:")
+        print(
+            "Using 'secure_archive' to write previous content to a new file:"
+        )
         result2 = secure_archive("vault_copy.txt", action=1, content=data)
         print(result2)
