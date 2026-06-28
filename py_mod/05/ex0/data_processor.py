@@ -94,9 +94,11 @@ class LogProcessor(DataProcessor):
     def ingest(self, data: "dict[str, str] | list[dict[str, str]]") -> None:
         if not self.validate(data):
             raise TypeError("Improper log data")
-        entries: list[dict[str, str]] = (
-            data if isinstance(data, list) else [data]
-        )
+        entries: list[dict[str, str]]
+        if isinstance(data, list):
+            entries = data
+        else:
+            entries = [data]
         for entry in entries:
             level: str = entry.get("log_level", "UNKNOWN")
             msg: str = entry.get("log_message", "")
@@ -112,7 +114,7 @@ if __name__ == "__main__":
     print(f"Trying to validate input 'Hello': {np.validate('Hello')}")
     print("Test invalid ingestion of string 'foo' without prior validation:")
     try:
-        np.ingest("foo")  # type: ignore[arg-type]
+        np.ingest("foo")
     except TypeError as e:
         print(f"Got exception: {e}")
     np.ingest([1, 2, 3, 4, 5])
