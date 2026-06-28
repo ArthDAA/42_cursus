@@ -95,9 +95,11 @@ class LogProcessor(DataProcessor):
     def ingest(self, data: "dict[str, str] | list[dict[str, str]]") -> None:
         if not self.validate(data):
             raise TypeError("Improper log data")
-        entries: list[dict[str, str]] = (
-            data if isinstance(data, list) else [data]
-        )
+        entries: list[dict[str, str]]
+        if isinstance(data, list):
+            entries = data
+        else:
+            entries = [data]
         for entry in entries:
             level: str = entry.get("log_level", "UNKNOWN")
             msg: str = entry.get("log_message", "")
@@ -132,8 +134,9 @@ class DataStream:
             return
         for proc in self._processors:
             print(
-                f"{proc.name()}: total {proc.total_ingested()} items processed, "
-                f"remaining {proc.remaining()} on processor"
+                f"{proc.name()}: total {proc.total_ingested()} "
+                f"items processed, remaining {proc.remaining()} "
+                f"on processor"
             )
 
 
@@ -153,7 +156,10 @@ if __name__ == "__main__":
         "Hello world",
         [3.14, -1, 2.71],
         [
-            {"log_level": "WARNING", "log_message": "Telnet access! Use ssh instead"},
+            {
+                "log_level": "WARNING",
+                "log_message": "Telnet access! Use ssh instead",
+            },
             {"log_level": "INFO", "log_message": "User wil is connected"},
         ],
         42,
@@ -173,7 +179,10 @@ if __name__ == "__main__":
     stream.print_processors_stats()
     print()
 
-    print("Consume some elements from the data processors: Numeric 3, Text 2, Log 1")
+    print(
+        "Consume some elements from the data processors: "
+        "Numeric 3, Text 2, Log 1"
+    )
     for proc in stream._processors:
         if isinstance(proc, NumericProcessor):
             for _ in range(3):

@@ -96,9 +96,11 @@ class LogProcessor(DataProcessor):
     def ingest(self, data: "dict[str, str] | list[dict[str, str]]") -> None:
         if not self.validate(data):
             raise TypeError("Improper log data")
-        entries: list[dict[str, str]] = (
-            data if isinstance(data, list) else [data]
-        )
+        entries: list[dict[str, str]]
+        if isinstance(data, list):
+            entries = data
+        else:
+            entries = [data]
         for entry in entries:
             level: str = entry.get("log_level", "UNKNOWN")
             msg: str = entry.get("log_message", "")
@@ -161,8 +163,9 @@ class DataStream:
             return
         for proc in self._processors:
             print(
-                f"{proc.name()}: total {proc.total_ingested()} items processed, "
-                f"remaining {proc.remaining()} on processor"
+                f"{proc.name()}: total {proc.total_ingested()} "
+                f"items processed, remaining {proc.remaining()} "
+                f"on processor"
             )
 
 
