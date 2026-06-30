@@ -13,7 +13,9 @@ def test_factory(factory: CreatureFactory) -> None:
     print(evolved.attack())
 
 
-def test_battle(factory_a: CreatureFactory, factory_b: CreatureFactory) -> None:
+def test_battle(
+        factory_a: CreatureFactory, factory_b: CreatureFactory
+        ) -> None:
     print("Testing battle")
     a: Creature = factory_a.create_base()
     b: Creature = factory_b.create_base()
