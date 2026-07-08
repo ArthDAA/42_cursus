@@ -1,5 +1,4 @@
 .env
-*.pyc
 __pycache__/
-matrix_env/
-.venv/
+*.pyc
+*Zone.Identifier

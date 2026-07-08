@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import os
-import sys
 
 try:
     from dotenv import load_dotenv
     load_dotenv()
 except ImportError:
-    print("Warning: python-dotenv not installed. Using environment variables only.")
+    print("Warning: python-dotenv not installed.")
+    print("Using environment variables only.")
 
 
 DEFAULTS: dict[str, str] = {
@@ -68,9 +68,9 @@ def main() -> None:
 
     mode: str = config["MATRIX_MODE"]
     if mode == "production":
-        print(f"\n[PROD] Running in production mode — stricter settings applied.")
+        print("\n[PROD] Production mode: strict settings applied.")
     else:
-        print(f"\n[DEV] Running in development mode — verbose output enabled.")
+        print("\n[DEV] Development mode: verbose output enabled.")
 
     print("\nThe Oracle sees all configurations.")
 
