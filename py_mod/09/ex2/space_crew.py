@@ -95,7 +95,7 @@ def main() -> None:
         mission_id="M2024_MARS",
         mission_name="Mars Colony Establishment",
         destination="Mars",
-        launch_date="2024-06-15T00:00:00",
+        launch_date=datetime.fromisoformat("2024-06-15T00:00:00"),
         duration_days=900,
         crew=crew,
         budget_millions=2500.0,
@@ -109,7 +109,10 @@ def main() -> None:
     print(f"Crew size: {len(mission.crew)}")
     print("Crew members:")
     for member in mission.crew:
-        print(f"  - {member.name} ({member.rank.value}) - {member.specialization}")
+        print(
+            f"  - {member.name} ({member.rank.value}) - "
+            f"{member.specialization}"
+        )
 
     print()
     print("=" * 41)
@@ -129,14 +132,14 @@ def main() -> None:
             mission_id="M_BAD_01",
             mission_name="Doomed Mission",
             destination="Pluto",
-            launch_date="2024-12-01T00:00:00",
+            launch_date=datetime.fromisoformat("2024-12-01T00:00:00"),
             duration_days=100,
             crew=bad_crew,
             budget_millions=50.0,
         )
     except ValidationError as e:
         for err in e.errors():
-            print(err["msg"])
+            print(err["msg"].removeprefix("Value error, "))
 
 
 if __name__ == "__main__":

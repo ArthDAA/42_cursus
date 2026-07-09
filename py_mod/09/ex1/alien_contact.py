@@ -30,8 +30,13 @@ class AlienContact(BaseModel):
             raise ValueError("Contact ID must start with 'AC'")
         if self.contact_type == ContactType.physical and not self.is_verified:
             raise ValueError("Physical contact reports must be verified")
-        if self.contact_type == ContactType.telepathic and self.witness_count < 3:
-            raise ValueError("Telepathic contact requires at least 3 witnesses")
+        if (
+            self.contact_type == ContactType.telepathic
+            and self.witness_count < 3
+        ):
+            raise ValueError(
+                "Telepathic contact requires at least 3 witnesses"
+            )
         if self.signal_strength > 7.0 and self.message_received is None:
             raise ValueError(
                 "Strong signals (> 7.0) should include received messages"
@@ -45,7 +50,7 @@ def main() -> None:
 
     contact = AlienContact(
         contact_id="AC_2024_001",
-        timestamp="2024-03-15T22:45:00",
+        timestamp=datetime.fromisoformat("2024-03-15T22:45:00"),
         location="Area 51, Nevada",
         contact_type=ContactType.radio,
         signal_strength=8.5,
@@ -68,7 +73,7 @@ def main() -> None:
     try:
         AlienContact(
             contact_id="AC_TEST_002",
-            timestamp="2024-03-15T23:00:00",
+            timestamp=datetime.fromisoformat("2024-03-15T23:00:00"),
             location="Pacific Ocean",
             contact_type=ContactType.telepathic,
             signal_strength=5.0,
@@ -77,7 +82,7 @@ def main() -> None:
         )
     except ValidationError as e:
         for err in e.errors():
-            print(err["msg"])
+            print(err["msg"].removeprefix("Value error, "))
 
 
 if __name__ == "__main__":
